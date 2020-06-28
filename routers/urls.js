@@ -20,7 +20,7 @@ router.post('/generate/shortUrl',async(req,res)=>{
             if(urldata)
             {
                 res.status(200).json({
-                    mesaage:"Short link for this URL has already been genrated. Check it out now!",
+                    message:"Short link for this URL has already been genrated. Check it out now!",
                     shortUrl:urldata.newUrl
                 })
             }
@@ -33,7 +33,7 @@ router.post('/generate/shortUrl',async(req,res)=>{
                 })
                 await shorturl.save()
                 res.status(201).json({
-                    mesaage:"New Short url generated! Check it out now!",
+                    message:"New Short url generated! Check it out now!",
                     shortUrl:shorturl.newUrl
                 })
             }
