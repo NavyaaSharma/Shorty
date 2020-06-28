@@ -22,7 +22,7 @@ app.use(cors())
 
 app.use(urlRoutes)
 
-const port=3000 || process.env.PORT
+const port=process.env.PORT || 3000
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
