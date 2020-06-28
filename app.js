@@ -5,7 +5,7 @@ const cors=require('cors')
 require("dotenv").config();
 
 var app=express()
-app.use(cors)
+// app.use(cors)
 
 mongoose.connect(process.env.db, {
     useNewUrlParser: true,
@@ -15,13 +15,10 @@ mongoose.connect(process.env.db, {
   .then(() => console.log("Database Connected"))
   .catch((err) => console.log(err));
 
-app.use(bodyParser.json({ extended: false }))
-
 const urlRoutes=require('./routers/urls')
 
-app.get('/me',(req,res)=>{
-    res.json("hhhh")
-})
+app.use(bodyParser.json({ extended: false }))
+app.use(cors())
 
 app.use(urlRoutes)
 
