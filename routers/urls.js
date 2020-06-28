@@ -10,7 +10,7 @@ router.post('/generate/shortUrl',async(req,res)=>{
 
     if(!validUrl.isUri(process.env.base_url)){
         res.status(401).json({
-            mesaage:"Invalid base url"
+            message:"Invalid base url"
         })
     }
     var urlCode=shortid.generate()
@@ -40,7 +40,7 @@ router.post('/generate/shortUrl',async(req,res)=>{
     }
     else{
         res.status(400).json({
-            mesaage:"Please enter a valid URL"
+            message:"Please enter a valid URL"
         })
     }
 })
