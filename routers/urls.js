@@ -7,7 +7,7 @@ const Url = require("../models/urls");
 
 router.post('/generate/shortUrl',async(req,res)=>{
 
-    console.log("jjjjjjjjjj")
+
     if(!validUrl.isUri(process.env.base_url)){
         res.status(401).json({
             mesaage:"Invalid base url"
@@ -37,6 +37,11 @@ router.post('/generate/shortUrl',async(req,res)=>{
                     shortUrl:shorturl.newUrl
                 })
             }
+    }
+    else{
+        res.status(400).json({
+            mesaage:"Please enter a valid URL"
+        })
     }
 })
 
